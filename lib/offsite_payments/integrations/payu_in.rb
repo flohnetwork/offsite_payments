@@ -50,7 +50,8 @@ module OffsitePayments #:nodoc:
         mapping :mode, 'pg'
 
         mapping :notify_url, 'notify_url'
-        mapping :return_url, ['surl', 'furl']
+        mapping :success_url, 'surl'
+        mapping :failure_url, 'furl'
         mapping :cancel_return_url, 'curl'
         mapping :checksum, 'hash'
 
