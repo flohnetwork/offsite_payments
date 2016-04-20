@@ -118,7 +118,7 @@ module OffsitePayments #:nodoc:
         end
 
         def checksum
-          response_xml.cs('checkSum').text
+          response_xml.css('checkSum').text
         end
 
         def message
