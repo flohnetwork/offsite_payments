@@ -130,7 +130,7 @@ module OffsitePayments #:nodoc:
         end
 
         def checksum_ok?
-          checksum_fields = [invoice, account, transaction_id, response_code, message].join
+          checksum_fields = [invoice, account, transaction_id, response_code, message].join("|")
 
           unless Digest::MD5.hexdigest([*checksum_fields, @secret_key].join("|")) == checksum
             @message = 'Return checksum not matching the data provided'
